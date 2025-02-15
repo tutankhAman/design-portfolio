@@ -187,7 +187,7 @@ const Homepage = () => {
         </div>
         <div className="portfolio-divider"></div>
         <div className="portfolio-image">
-          <img src="/public/laptop-mockup1.png" alt="E-commerce Project" />
+          <img src="/laptop-mockup1.png" alt="E-commerce Project" />
         </div>
       </section>
       <section className="portfolio-section">
