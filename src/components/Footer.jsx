@@ -15,7 +15,7 @@ const Footer = () => {
           <a href="mailto:amanaziz2020@gmail.com" aria-label="Email">
             <SiGmail />
           </a>
-          <a href="https://www.linkedin.com/aman-aziz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/aman-aziz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FaLinkedinIn />
           </a>
           <a href="https://www.github.com/tutankhAman" target="_blank" rel="noopener noreferrer" aria-label="GitHub">

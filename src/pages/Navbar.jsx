@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="logo">Aman A.</div>
         <div className="nav-links">
             <a href="mailto:amanaziz2020@gmail.com"><SiGmail/></a>
-            <a href="https://www.linkedin.com/aman-aziz" target="_blank" rel="noopener noreferrer"><FaLinkedinIn/></a>
+            <a href="https://www.linkedin.com/in/aman-aziz/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn/></a>
             <a href="https://www.github.com/tutankhAman" target="_blank" rel="noopener noreferrer"><FaGithub/></a>
         </div>
     </nav>
