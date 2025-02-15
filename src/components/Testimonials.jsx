@@ -4,19 +4,19 @@ import '../styles/Testimonials.css';
 
 const testimonials = [
   {
-    text: "Aman brought our vision to life with exceptional attention to detail and creative flair.",
-    author: "Sarah Chen",
-    position: "Product Manager"
+    text: "Aman completely transformed our website’s user experience! He took the time to understand and created an intuitive design that made navigation effortless",
+    author: "Koustubh Pande",
+    position: "Web Developer"
   },
   {
-    text: "The perfect blend of technical expertise and design sensibility. Outstanding work!",
-    author: "Michael Ross",
-    position: "Creative Director"
+    text: "Aman did a great job on our website. He was very professional and delivered on time. We will definitely be working with him again!",
+    author: "Masoom Raza",
+    position: "Owner of AEC"
   },
   {
     text: "Innovative solutions, clean code, and beautiful design - exactly what we needed.",
     author: "Jessica Kumar",
-    position: "Startup Founder"
+    position: "Developer of Delivo"
   }
 ];
 
