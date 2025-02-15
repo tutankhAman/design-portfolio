@@ -1,0 +1,36 @@
+.tech-stack-container {
+    background-color: #000;
+    height: 7rem;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top:10rem;
+    margin-bottom: 12rem;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    gap: 4rem;
+    padding: 0 2rem;
+    white-space: nowrap;
+    will-change: transform;
+    position: relative;
+    left: 0;
+}
+
+.icon-wrapper {
+    color: white;
+    font-size: 3.5rem;
+    flex-shrink: 0;
+}
+
+.icon-wrapper svg {
+    transition: transform 0.3s ease;
+}
+
+.icon-wrapper:hover svg {
+    transform: scale(1.2);
+}
