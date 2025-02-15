@@ -2,6 +2,7 @@
     background-color: #000;
     height: 7rem;
     width: 100vw;
+    margin-left: calc(-50vw + 50%);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -36,6 +37,8 @@
 
 .tech-stack {
     width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     background: #000;
     color: white;
     overflow: hidden;

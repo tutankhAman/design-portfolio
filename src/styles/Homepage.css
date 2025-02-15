@@ -2,22 +2,18 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    overflow-x: hidden;
+    overflow-x: visible;
 }
 
 .hero-section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     height: 100vh;
     position: relative;
     overflow: hidden;
     perspective: 1000px;
     transform-style: preserve-3d;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
 }
 
 .hero-background {
@@ -583,4 +579,12 @@
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
+}
+
+.tech-stack-container,
+.scrolling-text-container {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    max-width: none !important;
 }
