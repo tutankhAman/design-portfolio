@@ -1,0 +1,29 @@
+.scrolling-text-container {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background-color: #000;
+    height: 7rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 12rem;
+    position: relative;
+}
+
+.text-wrapper {
+    display: flex;
+    gap: 10rem;  /* Increased gap for cleaner look */
+    padding: 0 4rem;
+    will-change: transform;
+}
+
+.text-wrapper h2 {
+    color: white;
+    font-size: 3.5rem;
+    font-family: 'Italiana', serif;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0.9;
+}
