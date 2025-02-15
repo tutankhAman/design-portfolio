@@ -80,91 +80,72 @@ const Homepage = () => {
         floatingElements: section.querySelectorAll('.floating-element')
       };
 
-      // Set initial positions - different for each section
-      gsap.set([elements.heading, elements.subheading], { 
+      // Reset initial positions
+      gsap.set([elements.heading, elements.subheading, elements.divider, elements.image], { 
         opacity: 0,
-        y: 50
-      });
-      gsap.set(elements.divider, { 
-        scaleY: 0,
-        opacity: 0
-      });
-      gsap.set(elements.image, { 
-        opacity: 0,
-        x: index === 0 ? 100 : -100  // Come from right in first section, left in second
+        y: 50,
+        clearProps: "all" // Clear any existing GSAP properties
       });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: "top 70%",
-          end: "top 20%",
+          start: "top 75%",
+          end: "top 25%",
           toggleActions: "play none none reverse"
         }
       });
 
-      tl.to(elements.heading, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
+      // Unified animation timeline
+      tl.from(elements.heading, {
+        opacity: 0,
+        y: 50,
+        duration: 0.6,
         ease: "power3.out"
       })
-      .to(elements.subheading, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
+      .from(elements.subheading, {
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
         ease: "power3.out"
-      }, "-=0.6")
-      .to(elements.divider, {
-        scaleY: 1,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.inOut"
       }, "-=0.4")
-      .to(elements.image, {
-        opacity: 1,
-        x: 0,
-        duration: 1,
+      .from(elements.divider, {
+        scaleY: 0,
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.inOut"
+      }, "-=0.3")
+      .from(elements.image, {
+        opacity: 0,
+        x: index === 0 ? 50 : -50,
+        duration: 0.8,
         ease: "power2.out"
-      }, "-=0.6");
+      }, "-=0.3");
 
-      // Add floating elements animation
+      // Floating elements animation
       elements.floatingElements.forEach((el, i) => {
-        // Initial reveal animation
-        tl.to(el, {
-          opacity: 1,
-          scale: 1,
+        tl.from(el, {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.6,
+          ease: "power2.out"
+        }, "-=0.4");
+      });
+
+      // Mouse movement parallax
+      section.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const rect = section.getBoundingClientRect();
+        const relX = clientX - rect.left;
+        const relY = clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        gsap.to(el, {
+          x: (relX - centerX) * 0.05 * (i + 1),
+          y: (relY - centerY) * 0.05 * (i + 1),
           duration: 1,
           ease: "power2.out"
-        }, "-=0.8");
-
-        // Continuous floating animation
-        gsap.to(el, {
-          y: `random(-20, 20)`,
-          x: `random(-20, 20)`,
-          rotation: `random(-15, 15)`,
-          duration: `random(3, 5)`,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-          delay: i * 0.3
-        });
-
-        // Mouse movement parallax
-        section.addEventListener('mousemove', (e) => {
-          const { clientX, clientY } = e;
-          const rect = section.getBoundingClientRect();
-          const relX = clientX - rect.left;
-          const relY = clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-
-          gsap.to(el, {
-            x: (relX - centerX) * 0.05 * (i + 1),
-            y: (relY - centerY) * 0.05 * (i + 1),
-            duration: 1,
-            ease: "power2.out"
-          });
         });
       });
     };
